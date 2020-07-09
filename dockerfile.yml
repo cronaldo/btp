@@ -26,15 +26,15 @@ ENV RABBITMQ_LOGS=- RABBITMQ_SASL_LOGS=-
 ENV HOME /var/lib/rabbitmq
 
 RUN mkdir -p /var/lib/rabbitmq /etc/rabbitmq \
-	&& chown -R rabbitmq:rabbitmq /var/lib/rabbitmq /etc/rabbitmq \
-	&& chmod 777 /var/lib/rabbitmq /etc/rabbitmq
+&& chown -R rabbitmq:rabbitmq /var/lib/rabbitmq /etc/rabbitmq \
+&& chmod 777 /var/lib/rabbitmq /etc/rabbitmq
 
 RUN chown -R rabbitmq:rabbitmq /opt/app-root
 # && \
-	# chown -R rabbitmq:rabbitmq /var/log/rabbitmq/ && \
-	# chown -R rabbitmq:rabbitmq /var/lib/rabbitmq && \
-	# chown -R rabbitmq:rabbitmq /etc/rabbitmq/ && \
-	# chown -R rabbitmq:rabbitmq /usr/sbin/rabbitmq*
+# chown -R rabbitmq:rabbitmq /var/log/rabbitmq/ && \
+# chown -R rabbitmq:rabbitmq /var/lib/rabbitmq && \
+# chown -R rabbitmq:rabbitmq /etc/rabbitmq/ && \
+# chown -R rabbitmq:rabbitmq /usr/sbin/rabbitmq*
 VOLUME /var/lib/rabbitmq/
 
 RUN ls -la /var/lib/rabbitmq/
